@@ -14,11 +14,11 @@ interface UserRepositoryInterface
 
     public function update(User $user): void;
 
-    public function findByEmail(string $email): User;
+    public function findByEmail(string $email): ?User;
 
-    public function findByToken(string $token): User;
+    public function findByToken(string $token): ?User;
 
-    public function findById(int $id): User;
+    public function findById(int $id): ?User;
 
     public function updateApiToken(string|int $id, string $key): bool;
 }

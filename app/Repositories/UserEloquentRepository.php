@@ -24,12 +24,12 @@ class UserEloquentRepository implements UserRepositoryInterface
         return $model;
     }
 
-    public function findByEmail(string $email): User
+    public function findByEmail(string $email): ?User
     {
         return User::where(['email' => $email])->first();
     }
 
-    public function findByToken(string $token): User
+    public function findByToken(string $token): ?User
     {
         return User::where(['api_token' => $token])->first();
     }
@@ -39,7 +39,7 @@ class UserEloquentRepository implements UserRepositoryInterface
         $user->save();
     }
 
-    public function findById(int $id): User
+    public function findById(int $id): ?User
     {
         return User::where(['id' => $id])->first();
     }
