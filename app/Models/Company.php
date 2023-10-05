@@ -19,4 +19,8 @@ class Company extends Model
      */
     protected $fillable = ['user_id', 'title', 'phone', 'description'];
 
+    /**
+     * @var string[]
+     */
+    protected $hidden = ['user_id'];
 }
